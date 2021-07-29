@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+
+        <variable
+            name="musics"
+            type="com.tunahan.musicplayer.model.Musics" />
+        <variable
+            name="listener"
+            type="com.tunahan.musicplayer.adapter.ClickListener" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="125dp"
+    android:id="@+id/constraint"
+    android:layout_height="125dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="5dp"
+    tools:layout_editor_absoluteX="52dp"
+    tools:layout_editor_absoluteY="42dp"
+    >
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/recycleritem"
+        tools:ignore="ContentDescription"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/gridTextView"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:text="@{musics.filename}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="RtlSymmetry" />
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
